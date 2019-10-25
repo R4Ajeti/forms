@@ -1,17 +1,41 @@
-<h1>VIEW</h1>
+<h1>Form</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit "Create new user" %>
+<% end %>
+
+<%# form_tag form %>
+<%# <%= form_tag('/posts', method: :post, authenticity_token: form_authenticity_token ) do -%>                                                                            
+  <%# <%=   label_tag 'name'%>                                                                                                                                            
+  <%# <%= text_field_tag 'user[username]' %>                                                                                                                              
+  <%# <%=   label_tag 'email'%>                                                                                                                                           
+  <%# <%= email_field_tag 'user[email]' %>                                                                                                                                
+  <%# <%=   label_tag 'password'%>                                                                                                                                        
+  <%# <%= password_field_tag 'user[password]' %>                                                                                                                          
+  <%# <%= submit_tag 'Create new user' %> 
+  <%# <% end -%>                                                                                                                                                    
+
+<%# HTMl Form %>
 <%# <form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"> %>
-  <%= form_tag('/posts', method: :post, authenticity_token: form_authenticity_token ) do -%>
-    <%# <input name="utf8" type="hidden" value="&#x2713;" /> %>
-    <%# <input name="authenticity_token" type="hidden" value="NNb6+J/j46LcrgYUC60wQ2titMuJQ5lLqyAbnbAUkdo=" /> %>
-    <%=   label_tag 'name'%>
-    <%= text_field_tag 'user[username]' %>
-    <br>
-    <%=   label_tag 'email'%>
-    <%= email_field_tag 'user[email]' %>
-    <br>
-    <%=   label_tag 'password'%>
-    <%= password_field_tag 'user[password]' %>
-    <br>
-    <input class="btn btn-primary" name="commit" type="submit" value="Create my account" />
-  <% end -%>
+  <%# <input name="utf8" type="hidden" value="&#x2713;" /> %>
+  <%# <input name="authenticity_token" type="hidden" value="NNb6+J/j46LcrgYUC60wQ2titMuJQ5lLqyAbnbAUkdo=" /> %>
+  <%# <label for="user_username">Name</label> %>
+  <%# <input id="user_username" name="user[username]" type="text" /> %>
+  <%# <br> %>
+  <%# <label for="user_email">Email</label> %>
+  <%# <input id="user_email" name="user[email]" type="email" /> %>
+  <%# <br> %>
+  <%# <label for="user_password">Password</label> %>
+  <%# <input id="user_password" name="user[password]" type="password" /> %>
+  <%# <br> %>
+  <%# <input type="submit" value="Create new user" /> %>
   <%# </form> %>

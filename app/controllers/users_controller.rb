@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  def new; end
-
-  def index; end
+  def new
+    @user = User.new
+  end
 
   def create
     puts "create controler works! #{user_params}"
@@ -15,6 +15,8 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  private
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
