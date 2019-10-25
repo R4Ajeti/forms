@@ -1,15 +1,22 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-    def new
-    end
-    def index
-    end
-    def create
-    @user = User.new(username: params[:username], email: params[:email], password: params[:password])
+  def new; end
+
+  def index; end
+
+  def create
+    puts "create controler works! #{user_params}"
+    @user = User.new(user_params)
 
     if @user.save
-        redirect_to new_user_path
+      redirect_to new_user_path
     else
-        render :new
+      render :new
     end
-    end
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :email, :password)
+  end
 end
