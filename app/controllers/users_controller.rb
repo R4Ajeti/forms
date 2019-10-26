@@ -5,6 +5,28 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @users = User.all
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end 
+
   def create
     puts "create controler works! #{user_params}"
     @user = User.new(user_params)

@@ -1,0 +1,4 @@
+<h1>Wow you did it</h1>
+Username: <%= @user.username %>
+Email: <%= @user.email %>
+<%= link_to "Edit", edit_user_path(@user), data: {confirm: 'Are you sure that you wana edit?'}, :class => 'btn btn-warning' %>
