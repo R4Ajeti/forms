@@ -1,0 +1,19 @@
+<h1>Form</h1>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |msg| %>
+            <div class="alert alert-danger"><%= msg %></div>
+        <% end %>
+  <% end %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <br>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit "Create new user" %>
+<% end %>
